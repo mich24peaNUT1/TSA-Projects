@@ -92,7 +92,7 @@ AccessBridge/
 
 ---
 
-### Corry — Frontend & Extension Lead
+### Corey Miranda — Frontend & Extension Lead
 
 **Primary Responsibilities**
 - Browser extension logic  
