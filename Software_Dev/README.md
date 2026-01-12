@@ -1,180 +1,165 @@
-# AccessibilityHub
+# AccessBridge
 
-A comprehensive web application designed to remove barriers and increase accessibility for people with vision and hearing disabilities. Built for educational and social value as a software development competition project.
+**AccessBridge** is a browser-based accessibility web extension designed to remove barriers for people with **vision and hearing disabilities**. It enhances existing websites in real time by applying accessibility improvements and providing AI-assisted features that make online content more inclusive, understandable, and usable.
 
-## Project Overview
+This project was developed by a two-person team using a clear division of responsibilities and a modular software architecture.
 
-AccessibilityHub provides four main features to enhance accessibility:
+---
 
-1. **Speech to Text** - Real-time speech recognition that converts spoken words into written text
-2. **Text to Speech** - Natural-sounding voice synthesis with customizable voice, speed, and pitch
-3. **Image Description** - Automatic generation of descriptive text for images
-4. **Audio Visualizer** - Visual representation of audio through frequency spectrum and volume indicators
+## Problem Statement
+
+Many websites do not meet accessibility standards, creating barriers for users with visual or hearing impairments. Common issues include:
+
+- Poor color contrast and unreadable text  
+- Missing image descriptions (alt text)  
+- Audio or video content without captions  
+- Complex language that is difficult to understand  
+
+These barriers limit equal access to education, information, and online services.
+
+---
+
+## Our Solution
+
+AccessBridge is a **browser extension** that automatically detects accessibility issues on a webpage and fixes them in real time. It combines **frontend accessibility enforcement** with **backend AI-powered processing** to deliver both immediate usability improvements and advanced assistive features.
+
+---
+
+## Key Features
+
+### Vision Accessibility
+- Automatic color contrast correction (WCAG-compliant)
+- Adjustable text size and spacing
+- Screen-reader-friendly DOM restructuring
+- AI-generated alt text for images without descriptions
+
+### Hearing Accessibility
+- Speech-to-text captions for audio and video content
+- Text summaries of long audio or video segments
+- Visual alternatives for audio-only cues
+
+### Educational & Social Value
+- Accessibility reports explaining detected issues
+- References to WCAG guidelines in simple language
+- Demonstrates inclusive design principles
+
+---
 
 ## Technology Stack
 
-- **Frontend**: React 18 with TypeScript
-- **Styling**: Tailwind CSS with custom accessibility themes
-- **Database**: Supabase (PostgreSQL)
-- **Build Tool**: Vite
-- **Icons**: Lucide React
+### Frontend (Browser Extension)
+- HTML  
+- CSS  
+- JavaScript  
 
-## File Structure
+### Backend (AI & Processing)
+- Python  
+- FastAPI or Flask  
+- AI APIs for speech-to-text, summarization, and image captioning  
 
-```
-project/
-├── src/
-│   ├── components/           # Reusable UI components
-│   │   ├── Button.tsx        # Accessible button component
-│   │   ├── Card.tsx          # Card container component
-│   │   ├── FeatureCard.tsx   # Feature selection cards
-│   │   └── SettingsPanel.tsx # Accessibility settings panel
-│   │
-│   ├── context/              # React context providers
-│   │   ├── AccessibilityContext.tsx  # Manages accessibility settings
-│   │   └── AppContext.tsx            # Manages app-level state
-│   │
-│   ├── features/             # Main feature components
-│   │   ├── SpeechToText.tsx      # Speech recognition feature
-│   │   ├── TextToSpeech.tsx      # Text-to-speech feature
-│   │   ├── ImageDescription.tsx   # Image description feature
-│   │   └── AudioVisualizer.tsx    # Audio visualization feature
-│   │
-│   ├── hooks/                # Custom React hooks
-│   │   ├── useAccessibilitySettings.ts  # Hook for managing settings
-│   │   └── useSpeechRecognition.ts      # Hook for speech recognition
-│   │
-│   ├── lib/                  # Utility libraries
-│   │   ├── supabase.ts       # Supabase client setup
-│   │   └── accessibility.ts  # Accessibility helper functions
-│   │
-│   ├── types/                # TypeScript type definitions
-│   │   └── index.ts          # Main type definitions
-│   │
-│   ├── App.tsx               # Main application component
-│   ├── main.tsx              # Application entry point
-│   └── index.css             # Global styles with accessibility themes
-│
-├── index.html                # HTML entry point
-├── package.json              # Project dependencies
-├── tailwind.config.js        # Tailwind configuration
-├── tsconfig.json             # TypeScript configuration
-└── vite.config.ts            # Vite configuration
-```
+---
 
-## Accessibility Features
+## Repository Structure
 
-### Built-in Accessibility Settings
-- **Theme Selection**: Light, Dark, and High Contrast modes
-- **Text Size Control**: Small, Medium, Large, and Extra Large options
-- **High Contrast Mode**: Enhanced color contrast for better visibility
-- **Large Text Mode**: Increases default text size across the app
-- **Screen Reader Mode**: Optimized for screen reader users
-- **Reduced Motion**: Minimizes animations for users sensitive to motion
+AccessBridge/
+├── README.md
+├── docs/
+├── extension/
+├── backend/
+├── tests/
+├── scripts/
+└── presentation/
 
-### ARIA Support
-- Proper ARIA labels and roles throughout the application
-- Live regions for dynamic content updates
-- Screen reader announcements for important actions
-- Keyboard navigation support for all interactive elements
+---
 
-### Visual Design
-- Clear focus indicators on all interactive elements
-- Sufficient color contrast ratios
-- Responsive design that works across all devices
-- Clean, uncluttered interface with clear visual hierarchy
+## Team Roles & Directory Ownership
 
-## Database Schema
+### Elio Gonzalez — Backend & AI Systems Lead
 
-### Tables
+**Primary Responsibilities**
+- Python backend architecture  
+- AI API integration (speech-to-text, summarization, alt-text)  
+- Algorithm design and data processing  
+- Backend testing and performance optimization  
 
-1. **accessibility_settings** - Stores user accessibility preferences
-2. **transcriptions** - Saves speech-to-text transcriptions
-3. **image_descriptions** - Stores image descriptions
-4. **saved_content** - General content storage for user saves
+**Owned Directories**
 
-All tables have Row Level Security (RLS) enabled with public access policies for guest users.
+/backend
+/tests/backend
+/scripts
+/docs/api-spec.md
 
-## Key Features Implementation
 
-### Speech to Text
-- Uses Web Speech API for real-time speech recognition
-- Displays both final and interim transcriptions
-- Allows saving, copying, and speaking back transcribed text
-- Provides helpful tips for optimal results
+---
 
-### Text to Speech
-- Uses Web Speech Synthesis API
-- Customizable voice selection
-- Adjustable speech rate (0.5x - 2x)
-- Adjustable pitch (0.5 - 2)
-- Sample texts for quick testing
+### Corry — Frontend & Extension Lead
 
-### Image Description
-- Drag-and-drop or click-to-upload interface
-- Multiple image support
-- Generated descriptions can be read aloud
-- Saves descriptions to database
+**Primary Responsibilities**
+- Browser extension logic  
+- JavaScript DOM scanning and manipulation  
+- HTML/CSS UI design  
+- Client-side accessibility fixes and overlays  
 
-### Audio Visualizer
-- Real-time audio level display
-- 32-band frequency spectrum visualization
-- Color-coded volume indicators (green/yellow/red)
-- Helpful for hearing-impaired users to detect sounds
+**Owned Directories**
 
-## Development
+/extension
+/tests/extension
+/docs/user-guide.md
+/docs/accessibility-standards.md
 
-### Prerequisites
-- Node.js 18 or higher
-- npm or yarn
 
-### Installation
-```bash
-npm install
-```
+---
 
-### Running in Development
-The development server starts automatically.
+### Shared Responsibilities
+- System architecture decisions  
+- Integration testing  
+- Documentation review  
+- Final presentation and demo  
 
-### Building for Production
-```bash
-npm run build
-```
+---
 
-## Competition Project Goals
+## Architecture Overview
 
-This project demonstrates:
-- **Technical Excellence**: Clean architecture, TypeScript, modern React patterns
-- **Problem-Solving**: Innovative solutions for accessibility challenges
-- **Communication**: Clear UI/UX with helpful guidance and feedback
-- **Collaboration**: Well-organized codebase that's easy to understand and extend
-- **Social Value**: Real-world impact for people with disabilities
+The system is divided into two major components:
 
-## Educational Value
+1. **Browser Extension (Frontend)**
+   - Scans webpages for accessibility issues  
+   - Applies real-time fixes  
+   - Sends requests to the backend for AI-powered processing  
 
-This project teaches:
-- Web accessibility best practices (WCAG guidelines)
-- Browser APIs (Web Speech API, MediaStream API, Web Audio API)
-- Modern React development patterns
-- TypeScript for type-safe development
-- Database design with Supabase
-- Responsive design with Tailwind CSS
+2. **Python Backend (AI Services)**
+   - Generates alt text for images  
+   - Transcribes and summarizes audio/video content  
+   - Simplifies complex text for readability  
+
+Communication occurs through a clearly defined API contract.
+
+---
+
+## Testing & Validation
+
+- WCAG contrast checks  
+- Manual testing with screen readers  
+- Real-world webpage testing  
+- Unit and integration tests for backend services  
+
+---
 
 ## Social Impact
 
-AccessibilityHub directly addresses barriers faced by people with:
-- **Vision Disabilities**: Text-to-speech, proper ARIA support, high contrast modes
-- **Hearing Disabilities**: Speech-to-text transcription, audio visualization
+AccessBridge promotes **digital inclusion** by helping users with disabilities independently access online content. It also serves as an educational tool that demonstrates how thoughtful software design can create real-world social benefits.
 
-All features work directly in the browser with no external API calls, ensuring privacy and accessibility even in offline scenarios.
+---
 
-## Future Enhancements
+## Future Improvements
 
-Potential areas for expansion:
-- Real-time video captioning
-- Sign language translation
-- Voice command navigation
-- Collaboration features for real-time transcription sharing
-- AI-powered image description improvements
-- Multi-language support
-- Mobile app versions
+- Multilingual caption support  
+- Dyslexia-friendly reading modes  
+- Accessibility scoring for websites  
+- Offline processing options  
+
+---
+
+## License
+
+This project is released under the MIT License.
