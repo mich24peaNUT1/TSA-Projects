@@ -52,6 +52,7 @@ body {
 
 .buttonsContainer {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     width: 100%;
 }
@@ -59,9 +60,9 @@ body {
 .colorButton {
     display: inline-block;
     cursor: pointer;
-    width: 20%;
-    height: 7vmin;
-    font-size: 99%;
+    width: 48%;
+    height: 7.5vmax;
+    font-size: 2.5vmax;
     transition: .4s;
 }
 
