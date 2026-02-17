@@ -94,14 +94,6 @@ ElPasoHelps.CreateNode()
 FoodBank.CreateNode()
 ElPasoHealth.CreateNode()
 VeteranAssistance.CreateNode()
-ElPasoHelps.CreateNode()
-FoodBank.CreateNode()
-ElPasoHealth.CreateNode()
-VeteranAssistance.CreateNode()
-ElPasoHelps.CreateNode()
-FoodBank.CreateNode()
-ElPasoHealth.CreateNode()
-VeteranAssistance.CreateNode()
 
 
 // 2. Initialize the App with your App ID
