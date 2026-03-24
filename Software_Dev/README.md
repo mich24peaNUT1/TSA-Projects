@@ -1,6 +1,6 @@
 # AccessBridge
 
-**AccessBridge** is a browser-based accessibility web extension designed to remove barriers for people with **vision and hearing disabilities**. It enhances existing websites in real time by applying accessibility improvements and providing AI-assisted features that make online content more inclusive, understandable, and usable.
+**AccessBridge** is a browser-based accessibility web extension designed to remove barriers for people with **vision and hearing disabilities**. It enhances existing websites in real time by applying accessibility improvements and providing features that make online content more inclusive, understandable, and usable.
 
 This project was developed by a two-person team using a clear division of responsibilities and a modular software architecture.
 
@@ -21,7 +21,7 @@ These barriers limit equal access to education, information, and online services
 
 ## Our Solution
 
-AccessBridge is a **browser extension** that automatically detects accessibility issues on a webpage and fixes them in real time. It combines **frontend accessibility enforcement** with **backend AI-powered processing** to deliver both immediate usability improvements and advanced assistive features.
+AccessBridge is a **browser extension** that automatically detects accessibility issues on a webpage and fixes them in real time. It combines **frontend accessibility enforcement** with **backend processing** to deliver both immediate usability improvements and advanced assistive features.
 
 ---
 
@@ -31,7 +31,7 @@ AccessBridge is a **browser extension** that automatically detects accessibility
 - Automatic color contrast correction (WCAG-compliant)
 - Adjustable text size and spacing
 - Screen-reader-friendly DOM restructuring
-- AI-generated alt text for images without descriptions
+- alt text for images without descriptions
 
 ### Hearing Accessibility
 - Speech-to-text captions for audio and video content
@@ -52,10 +52,10 @@ AccessBridge is a **browser extension** that automatically detects accessibility
 - CSS  
 - JavaScript  
 
-### Backend (AI & Processing)
+### Backend (Processing)
 - Python  
 - FastAPI or Flask  
-- AI APIs for speech-to-text, summarization, and image captioning  
+- speech-to-text, summarization, and image captioning  
 
 ---
 
@@ -74,11 +74,11 @@ AccessBridge/
 
 ## Team Roles & Directory Ownership
 
-### Elio Gonzalez — Backend & AI Systems Lead
+### Elio Gonzalez — Backend Lead
 
 **Primary Responsibilities**
 - Python backend architecture  
-- AI API integration (speech-to-text, summarization, alt-text)  
+- (speech-to-text, summarization, alt-text)  
 - Algorithm design and data processing  
 - Backend testing and performance optimization  
 
@@ -127,7 +127,7 @@ The system is divided into two major components:
    - Applies real-time fixes  
    - Sends requests to the backend for AI-powered processing  
 
-2. **Python Backend (AI Services)**
+2. **Python Backend **
    - Generates alt text for images  
    - Transcribes and summarizes audio/video content  
    - Simplifies complex text for readability  
